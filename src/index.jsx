@@ -1,6 +1,19 @@
+import React from 'react'
 
-class Panel {
+class Meta extends React.Component {
   render () {
+    return (
+      <div>
+        <span>Meta:</span>
+        {this.props.children}
+      </div>
+    )
+  }
+}
+
+class Panel extends React.Component {
+  render () {
+    // console.log('+++ rendering pi Panel:', this.props)
     return (
       <div className="dropShadow">
         <div className="inner">
@@ -11,5 +24,6 @@ class Panel {
   }
 }
 
+export { Meta }
 export { Panel }
 
