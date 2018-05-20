@@ -1,7 +1,7 @@
 {
-  "name": "newsitems",
-  "version": "0.0.6",
-  "description": "newsitems renderer",
+  "name": "piousbox-render",
+  "version": "0.0.1",
+  "description": "react-bootstap doesnt work for me so I have to make my own.",
   "main": "dist/index.js",
   "author": "Victor Pudeyev",
   "license": "MIT",
