@@ -45,13 +45,16 @@ class NewsitemReport extends React.Component {
   }
 }
 
-export default {
+export Newsitems
+export Newsitem
+
+  /* export default {
   Newsitems,
   Newsitem,
   NewsitemGallery,
   NewsitemReport,
   NewsitemVideo
-}
+} */
 
 
         

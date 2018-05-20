@@ -1,8 +1,8 @@
 {
   "name": "newsitems",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "newsitems renderer",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "author": "Victor Pudeyev",
   "license": "MIT",
   "devDependencies": {
