@@ -30,11 +30,11 @@ class Meta extends React.Component {
 
 class Newsitems extends React.Component {
   render () {
-    // console.log('+++ Newsitems render', this.props, this.state)
-    if (!this.props.items) { return(null) } 
+    console.log('+++ Newsitems render', this.props, this.state)
+    if (!this.props.newsitems) { return(null) } 
     let newsitems = []
     let idx = 0
-    this.props.items.map(i => {
+    this.props.newsitems.map(i => {
       if (i.item_type === 'report') {
         newsitems.push(<div key={idx++}><NewsitemReport item={i} /></div>)
       } else if (i.item_type === 'gallery') {

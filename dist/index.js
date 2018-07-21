@@ -107,13 +107,13 @@ var Newsitems = function (_React$Component4) {
   _createClass(Newsitems, [{
     key: 'render',
     value: function render() {
-      // console.log('+++ Newsitems render', this.props, this.state)
-      if (!this.props.items) {
+      console.log('+++ Newsitems render', this.props, this.state);
+      if (!this.props.newsitems) {
         return null;
       }
       var newsitems = [];
       var idx = 0;
-      this.props.items.map(function (i) {
+      this.props.newsitems.map(function (i) {
         if (i.item_type === 'report') {
           newsitems.push(_react2.default.createElement(
             'div',
