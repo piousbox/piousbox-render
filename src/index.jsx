@@ -38,11 +38,11 @@ class Newsitems extends React.Component {
       if (i.item_type === 'report') {
         newsitems.push(<div key={idx++}><NewsitemReport item={i} /></div>)
       } else if (i.item_type === 'gallery') {
-        // newsitems.push(<div key={idx++}><NewsitemGallery item={i} /></div>)
+        newsitems.push(<div key={idx++}><NewsitemGallery item={i} /></div>)
       } else if (i.item_type === 'video') {
-        // newsitems.push(<div key={idx++}><NewsitemVideo item={i} /></div>)
+        newsitems.push(<div key={idx++}><NewsitemVideo item={i} /></div>)
       } else if (i.item_type === 'photo') {
-        // newsitems.push(<div key={idx++}><NewsitemPhoto item={i} /></div>)
+        newsitems.push(<div key={idx++}><NewsitemPhoto item={i} /></div>)
       }
     })
     return (
@@ -75,7 +75,7 @@ class NewsitemGallery extends React.Component {
   render () {
     // console.log('+++ NewsitemGallery render')
     return (
-      <div>newsitemGallery</div>
+      <div>newsitemGallery {this.props.item.name}</div>
     )
   }
 }
