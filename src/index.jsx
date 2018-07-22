@@ -46,7 +46,7 @@ class Newsitems extends React.Component {
       }
     })
     return (
-      <div>{ newsitems } </div>
+      <div>{ newsitems }</div>
     )
   }
 }

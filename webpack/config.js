@@ -2,7 +2,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './src/scaffold.jsx',
   output: {
     path: path.resolve('dist'),
     filename: 'index.js'
@@ -19,6 +19,10 @@ module.exports = {
         query: {
           presets: [ 'react', 'es2015' ]
         }
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
       }
     ]
   }

@@ -143,6 +143,7 @@ var Newsitems = function (_React$Component4) {
       return _react2.default.createElement(
         'div',
         null,
+        'and?',
         newsitems,
         ' '
       );
