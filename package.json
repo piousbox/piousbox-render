@@ -1,6 +1,6 @@
 {
   "name": "piousbox-render",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "react-bootstap doesnt work for me so I have to make my own.",
   "main": "dist/index.js",
   "author": "Victor Pudeyev",

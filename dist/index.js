@@ -121,11 +121,23 @@ var Newsitems = function (_React$Component4) {
             _react2.default.createElement(NewsitemReport, { item: i })
           ));
         } else if (i.item_type === 'gallery') {
-          // newsitems.push(<div key={idx++}><NewsitemGallery item={i} /></div>)
+          newsitems.push(_react2.default.createElement(
+            'div',
+            { key: idx++ },
+            _react2.default.createElement(NewsitemGallery, { item: i })
+          ));
         } else if (i.item_type === 'video') {
-          // newsitems.push(<div key={idx++}><NewsitemVideo item={i} /></div>)
+          newsitems.push(_react2.default.createElement(
+            'div',
+            { key: idx++ },
+            _react2.default.createElement(NewsitemVideo, { item: i })
+          ));
         } else if (i.item_type === 'photo') {
-          // newsitems.push(<div key={idx++}><NewsitemPhoto item={i} /></div>)
+          newsitems.push(_react2.default.createElement(
+            'div',
+            { key: idx++ },
+            _react2.default.createElement(NewsitemPhoto, { item: i })
+          ));
         }
       });
       return _react2.default.createElement(
@@ -191,7 +203,8 @@ var NewsitemGallery = function (_React$Component6) {
       return _react2.default.createElement(
         'div',
         null,
-        'newsitemGallery'
+        'newsitemGallery ',
+        this.props.item.name
       );
     }
   }]);
