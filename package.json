@@ -1,8 +1,8 @@
 {
   "name": "piousbox-render",
   "version": "0.0.21",
-  "description": "Seed project for React apps using ES6 & webpack.",
-  "repository": "https://github.com/badsyntax/react-seed",
+  "description": "Convenience React modules to render UI across projects",
+  "repository": "https://github.com/piousbox/piousbox-render",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.1.3",
