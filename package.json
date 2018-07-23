@@ -1,6 +1,6 @@
 {
   "name": "piousbox-render",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Seed project for React apps using ES6 & webpack.",
   "repository": "https://github.com/badsyntax/react-seed",
   "license": "MIT",
@@ -136,8 +136,7 @@
     "@": "."
   },
   "config": {
-    "buildDir": "./build",
-    "buildDirTests": "./build_tests",
+    "buildDir": "./dist",
     "devHost": "127.0.0.1",
     "devPort": 8003,
     "title": "piousbox-render",
@@ -166,3 +165,4 @@
     "webpack": "webpack --colors --progress --config ./webpack/config"
   }
 }
+
