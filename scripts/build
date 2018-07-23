@@ -3,6 +3,7 @@
 set -x
 
 # npm run test-travis &&
+git branch
 
 git checkout deploy &&
 git merge master &&
@@ -15,5 +16,6 @@ git commit -m 'auto-build on `date +%Y%m%d`' ;
 git push origin deploy &&
 npm publish &&
 git checkout master &&
+git merge deploy &&
 
 echo "piousbox-render build ok"
