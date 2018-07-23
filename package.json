@@ -1,6 +1,6 @@
 {
   "name": "piousbox-render",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Convenience React modules to render UI across projects",
   "repository": "https://github.com/piousbox/piousbox-render",
   "license": "MIT",
