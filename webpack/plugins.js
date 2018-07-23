@@ -19,10 +19,8 @@ if (DEBUG) {
   );
 } else if (!TEST) {
   plugins.push(
-    new ExtractTextPlugin(cssBundle, {
-      allChunks: true
-    }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin(cssBundle, { allChunks: true }),
+    // new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
       'process.env': {
