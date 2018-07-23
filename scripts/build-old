@@ -2,19 +2,15 @@
 
 set -x
 
-tagNumber=`git branch | grep -e "^*" | cut -d' ' -f 2`
-echo "tag number:"
-echo "$tagNumber"
-
 # npm run test-travis &&
 
-git checkout master &&
-git merge "$tagNumber" &&
+git checkout deploy &&
+git merge master &&
 npm run clean &&
 npm run build &&
 git add . &&
 git commit -m 'auto-build on `date +%Y%m%d`' ;
-git push origin master &&
-git checkout "$tagNumber" &&
+git push origin deploy &&
+git checkout master &&
 
-echo "sedux_eact build ok"
+echo "piousbox-render build ok"
