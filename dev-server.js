@@ -9,7 +9,7 @@ var host = pkg.config.devHost;
 
 var config = require('./webpack/config')
 
-var server = new WebpackDevServer(webpack(config), { contentBase: './src' })
+var server = new WebpackDevServer(webpack(config), { contentBase: './dist' })
 
 server.listen(port, host, function (err) {
   if (err) { console.log(err); }
