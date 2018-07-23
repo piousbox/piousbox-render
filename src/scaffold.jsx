@@ -1,5 +1,5 @@
 import './index.html'
-if (DEBUG) { import 'babel-core/polyfill' }
+import 'babel-core/polyfill'
 
 import React from 'react'
 import ReactDOM from 'react-dom'

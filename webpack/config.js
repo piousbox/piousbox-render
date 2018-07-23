@@ -11,14 +11,14 @@ var TEST = process.env.NODE_ENV === 'test';
 
 var jsBundle = path.join('js', util.format('[name].%s.js', pkg.version));
 
-var entry = {
-  app: ['./scaffold.jsx']
-};
-
+var entry = {}
 if (DEBUG) {
+  entry.app = ['./scaffold.jsx']
   entry.app.push( util.format( 'webpack-dev-server/client?http://%s:%d', pkg.config.devHost, pkg.config.devPort));
   entry.app.push('webpack/hot/dev-server');
-} 
+} else {
+  entry.app = ['./index.jsx']
+}
 
 var config = {
   context: path.join(__dirname, '../src'),
