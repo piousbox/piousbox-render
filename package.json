@@ -1,6 +1,6 @@
 {
   "name": "piousbox-render",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Seed project for React apps using ES6 & webpack.",
   "repository": "https://github.com/badsyntax/react-seed",
   "license": "MIT",
