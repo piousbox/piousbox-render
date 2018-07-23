@@ -1,3 +1,5 @@
 0.0.0 - worked but needed scaffold
 0.0.1 - has scaffold
-
+Since npm has its own versions, I cant use these anymore.
+20180713- my own panel; added DEBUG; improved scaffold; translucent bg; photos
+in newsitemsGallery.

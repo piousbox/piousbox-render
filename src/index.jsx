@@ -1,6 +1,11 @@
+/**
+ * piousbox-render / index.jsx
+ */
+
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Panel, } from 'react-bootstrap'
+// I have to use my own Panel, not bootstrap's
+import { Dialog, } from 'react-bootstrap'
 
 class Features extends React.Component {
   render () {
@@ -74,11 +79,18 @@ class Newsitem extends React.Component {
 
 class NewsitemGallery extends React.Component {
   render () {
-    // console.log('+++ NewsitemGallery render')
+    DEBUG && console.log('+++ NewsitemGallery render', this.props)
+    let photos = []
+    if (this.props.item.photos) {
+      this.props.item.photos.map(photo => {
+        photos.push(<img src={photo.thumb_url} alt='' />)
+      })
+    }
     return (
       <div>
         <Panel>
-          {this.props.item.name}
+          <h5>{this.props.item.name}</h5>
+          { photos }
         </Panel>
       </div>
     )
@@ -121,6 +133,26 @@ class NewsitemReport extends React.Component {
         <Meta item={this.props.item} />
         { /* <img style={{ border: '10px solid gray', padding: '10px', width: '100%' }} src={this.props.item.photo_url} alt=''  /> */ }
       </Panel>
+    )
+  }
+}
+
+
+class Panel extends React.Component {
+  render () {
+    // console.log('+++ rendering pi Panel:', this.props)
+    let style = {
+      padding: '1rem',
+      backgroundColor: 'rgba(255, 255, 255, 0.7)',
+      marginBottom: '1rem',
+      borderRadius: 8,
+    }
+    return (
+      <div style={style} className={`ish-Panel dropShadow {this.props.className}`}>
+        <div className="inner">
+          {this.props.children}
+        </div>
+      </div>
     )
   }
 }
