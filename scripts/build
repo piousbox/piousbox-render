@@ -1,10 +1,21 @@
 #!/bin/bash
 
-set -ex
+set -x
 
-npm run build
+tagNumber=`git branch | grep -e "^*" | cut -d' ' -f 2`
+echo "tag number:"
+echo "$tagNumber"
+
 ./scripts/version_bump
-git add .; git commit -m 'autocommit'; git push
+git checkout master &&
+git merge "$tagNumber" &&
+npm run clean &&
+npm run build &&
+git add . &&
+git commit -m 'auto-build on `date +%Y%m%d`' ;
+git push origin master &&
+git checkout "$tagNumber" &&
+
 npm publish
 
 echo 'Built npm module piosubox-render'
