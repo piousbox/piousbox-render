@@ -16,7 +16,8 @@
     "autoprefixer": "^9.0.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.5.0",
@@ -27,10 +28,10 @@
     "nodemon": "^1.18.3",
     "webpack": "^4",
     "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.5"
   },
   "config": {
-    "buildDir": "./build",
+    "buildDir": "./dist",
     "buildDirTests": "./build_tests",
     "devHost": "127.0.0.1",
     "devPort": 8003,
@@ -46,7 +47,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/babel src/index.jsx -o dist/index.js --presets react,es2015",
-    "dev": "NODE_ENV=development node dev-server ./webpack/config"
+    "build": "./node_modules/.bin/babel src/scaffold.jsx -o dist/index.js --presets react,es2015",
+    "dev": "NODE_ENV=development node webback-dev-server ./webpack/config --content-base dist/"
   }
 }

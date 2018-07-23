@@ -3,9 +3,6 @@ var util = require('util');
 var autoprefixer = require('autoprefixer');
 var pkg = require('../package.json');
 
-var loaders = require('./loaders');
-var plugins = require('./plugins');
-
 var DEBUG = process.env.NODE_ENV === 'development';
 var TEST = process.env.NODE_ENV === 'test';
 
@@ -35,14 +32,29 @@ var config = {
     pathinfo: false
   },
 
-  context: path.join(__dirname, '../app'),
+  context: path.join(__dirname, '../src'),
   cache: DEBUG,
   target: 'web',
   devtool: DEBUG || TEST ? 'inline-source-map' : false,
   module: {
-    rules: loaders
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: { loader: 'babel-loader' }
+      },
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: { loader: 'babel-loader' }
+      },
+      {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        use: { loader: 'html-loader' }
+      }
+    ]
   },
-  plugins: plugins,
   resolve: {
     extensions: [ '.js', '.json', '.jsx'],
     modules: ['node_modules', 'config/' + process.env.NODE_ENV ]

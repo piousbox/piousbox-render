@@ -1,4 +1,4 @@
-import './index.html'
+import './scaffold.html'
 // import 'babel-core/polyfill'
 
 import React from 'react'
