@@ -24,14 +24,15 @@ var config = {
   context: path.join(__dirname, '../src'),
   cache: DEBUG,
   debug: DEBUG,
-  target: 'web',
+  target: 'node', // default is web
   devtool: DEBUG || TEST ? 'inline-source-map' : false,
   entry: entry,
   output: {
     path: path.resolve(pkg.config.buildDir),
     publicPath: pkg.config.asset_path[process.env.NODE_ENV],
     filename: jsBundle,
-    pathinfo: false
+    pathinfo: false,
+    libraryTarget: 'commonjs2'
   },
   module: {
     loaders: loaders
@@ -43,6 +44,9 @@ var config = {
   resolve: {
     extensions: ['', '.js', '.json', '.jsx'],
     modulesDirectories: [ 'node_modules', 'config/'+process.env.NODE_ENV ]
+  },
+  externals: {
+    'react': 'commonjs react'
   }
 }
 
