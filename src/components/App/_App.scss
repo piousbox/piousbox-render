@@ -1,0 +1,65 @@
+@import "toolkit";
+@import "animate";
+
+.app {
+  font-size: inherit;
+  @include my-padding-mixin(20px);
+}
+
+.wrap {
+  margin-top: 1em;
+  padding-top: 1em;
+  /* border-top: 3px solid #ccc; */
+  text-align: center
+}
+.wrap p { 
+  text-align: left;
+}
+.topRow {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.services {
+  padding-top: 3em;
+}
+
+.cloudWrapper {
+  justify-content: center;
+  display: flex;
+}
+.cloud {
+}
+
+.redBorder {
+  border: 1px solid red;
+  padding: 1em;
+}
+
+/*
+ * transitions
+ */
+.enter {
+  opacity: 0.01;
+  transition: opacity 1s ease-in;
+  border: 1px solid green;
+}
+.enter.enterActive {
+  opacity: 1;
+  border: 1px solid blue;
+}
+.leave {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+.leave.leaveActive {
+  opacity: 0.01;
+}
+.appear {
+  opacity: 0.01;
+}
+.appear.appearActive {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
