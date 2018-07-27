@@ -80,16 +80,19 @@ class Newsitem extends React.Component {
 class NewsitemGallery extends React.Component {
   render () {
     DEBUG && console.log('+++ NewsitemGallery render', this.props)
+    if (!this.props.item) { console.log('+++ NewsitemGallery expects props.item') }
+    if (!this.props.item) { console.log('+++ NewsitemGallery expects props.link, a string') }
+
     let photos = []
     if (this.props.item.photos) {
-      this.props.item.photos.map(photo => {
-        photos.push(<img src={photo.thumb_url} alt='' />)
+      this.props.item.photos.map((photo, idx) => {
+        photos.push(<img key={idx} src={photo.thumb_url} alt='' />)
       })
     }
     return (
       <div>
         <Panel>
-          <h5>{this.props.item.name}</h5>
+          <h5>A<Link to={this.props.link}>{this.props.item.name}</Link></h5>
           { photos }
         </Panel>
       </div>
