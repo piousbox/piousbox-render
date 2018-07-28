@@ -44,9 +44,6 @@ var config = {
     extensions: ['', '.js', '.json', '.jsx'],
     modulesDirectories: [ 'node_modules', 'config/'+process.env.NODE_ENV ]
   },
-  externals: {
-    'react': 'commonjs react'
-  },
   devServer: {
     contentBase: path.resolve(pkg.config.buildDir),
     historyApiFallback: true,
