@@ -57,7 +57,11 @@ var config = {
 
 if (process.env.NODE_ENV === 'production') {
   config.output.libraryTarget = 'commonjs2';
+  config.output.libraryTarget = 'umd';
+  config.output.library = 'piousbox-render';
   config.externals = { react: 'commonjs react' };
 }
+
+console.log('+++ config:', config)
 
 module.exports = config;
