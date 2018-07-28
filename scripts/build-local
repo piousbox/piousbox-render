@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -x
+
+rm -rf node_modules
+npm install
+npm run build
+cp dist/js/app*.js index.js &&
+npm link
+
+echo "piousbox-render LOCAL build ok"

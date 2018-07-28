@@ -24,7 +24,7 @@ var config = {
   context: path.join(__dirname, '../src'),
   cache: DEBUG,
   debug: DEBUG,
-  target: 'node', // default is web
+  target: 'web', 
   devtool: DEBUG || TEST ? 'inline-source-map' : false,
   entry: entry,
   output: {
@@ -32,7 +32,6 @@ var config = {
     publicPath: pkg.config.asset_path[process.env.NODE_ENV],
     filename: jsBundle,
     pathinfo: false,
-    libraryTarget: 'commonjs2'
   },
   module: {
     loaders: loaders
@@ -47,7 +46,21 @@ var config = {
   },
   externals: {
     'react': 'commonjs react'
+  },
+  devServer: {
+    contentBase: path.resolve(pkg.config.buildDir),
+    historyApiFallback: true,
+    hot: true,
+    noInfo: false,
+    inline: true,
+    stats: { colors: true },
+    disableHostCheck: true
   }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  config.output.libraryTarget = 'commonjs2';
+  config.externals = { react: 'commonjs react' };
 }
 
 module.exports = config;
