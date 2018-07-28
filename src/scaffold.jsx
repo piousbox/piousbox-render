@@ -3,6 +3,7 @@ import 'babel-core/polyfill'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import { Newsitems, NewsitemGallery } from './index'
 
@@ -55,8 +56,10 @@ class Scaffold extends React.Component {
 
     return (
       <div style={{ background: 'black', minHeight: '500px' }} >
-        { /* <Newsitems newsitems={newsitems} /> */ }
-        <NewsitemGallery item={newsitemGallery} />
+        <BrowserRouter >
+          { /* <Newsitems newsitems={newsitems} /> */ }
+          <NewsitemGallery item={newsitemGallery} link={"/some-path"}/>
+        </BrowserRouter>
       </div>
     )
   }

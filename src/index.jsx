@@ -10,6 +10,8 @@ import { Dialog, } from 'react-bootstrap'
 class Features extends React.Component {
   render () {
     return (
+
+
       <div>Features</div>
     )
   }
@@ -81,7 +83,7 @@ class NewsitemGallery extends React.Component {
   render () {
     DEBUG && console.log('+++ NewsitemGallery render', this.props)
     if (!this.props.item) { console.log('+++ NewsitemGallery expects props.item') }
-    if (!this.props.item) { console.log('+++ NewsitemGallery expects props.link, a string') }
+    if (!this.props.link) { console.log('+++ NewsitemGallery expects props.link, a string') }
 
     let photos = []
     if (this.props.item.photos) {
@@ -92,7 +94,7 @@ class NewsitemGallery extends React.Component {
     return (
       <div>
         <Panel>
-          <h5>A<Link to={this.props.link}>{this.props.item.name}</Link></h5>
+          <h5>C<Link to={this.props.link}>{this.props.item.name}</Link></h5>
           { photos }
         </Panel>
       </div>
