@@ -5,13 +5,14 @@ set -x
 # npm run test-travis &&
 git branch
 
-./scripts/version_bump &&
-git checkout deploy &&
-git merge master &&
-npm run clean &&
+./scripts/version_bump
+git checkout deploy
+git merge master
+npm run clean
+npm install
 npm run build &&
 cp dist/js/app*.js index.js &&
-git add . &&
+git add .
 git commit -m 'auto-build on `date +%Y%m%d`' ;
 git push origin deploy &&
 npm publish &&

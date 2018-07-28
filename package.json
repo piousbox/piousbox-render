@@ -1,6 +1,6 @@
 {
   "name": "piousbox-render",
-  "version": "0.0.28",
+  "version": "0.0.30",
   "description": "Convenience React modules to render UI across projects",
   "repository": "https://github.com/piousbox/piousbox-render",
   "license": "MIT",
@@ -150,7 +150,7 @@
   },
   "scripts": {
     "build": "NODE_ENV=production npm run webpack",
-    "clean": "rm -rf $npm_package_config_buildDir && mkdir $npm_package_config_buildDir",
+    "clean": "rm -rf node_modules && mkdir node_modules",
     "env": "env",
     "lint": "eslint --ext .js --ext .jsx ./app ./webpack && echo No linting errors.",
     "lint_custom": "eslint --ext .js --ext .jsx ./app/components/Footer ./webpack && echo No linting errors.",
