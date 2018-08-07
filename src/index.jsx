@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom'
 // I have to use my own Panel, not bootstrap's
 import { Dialog, } from 'react-bootstrap'
 
+const DEBUG = true
+
 class Features extends React.Component {
   render () {
     return (
-
-
       <div>Features</div>
     )
   }
@@ -46,7 +46,7 @@ class Newsitems extends React.Component {
       if (i.item_type === 'report') {
         newsitems.push(<div key={idx++}><NewsitemReport item={i} /></div>)
       } else if (i.item_type === 'gallery') {
-        newsitems.push(<div key={idx++}><NewsitemGallery item={i} /></div>)
+        newsitems.push(<div key={idx++}><NewsitemGallery item={i} link={this.props.router.galleryLink} /></div>)
       } else if (i.item_type === 'video') {
         newsitems.push(<div key={idx++}><NewsitemVideo item={i} /></div>)
       } else if (i.item_type === 'photo') {
@@ -81,9 +81,10 @@ class Newsitem extends React.Component {
 
 class NewsitemGallery extends React.Component {
   render () {
-    DEBUG && console.log('+++ NewsitemGallery render', this.props)
+    // DEBUG && console.log('+++ NewsitemGallery render', this.props)
+    console.log('+++ NewsitemGallery render', this.props)
     if (!this.props.item) { console.log('+++ NewsitemGallery expects props.item') }
-    if (!this.props.link) { console.log('+++ NewsitemGallery expects props.link, a string') }
+    if (!this.props.linkTo) { console.log('+++ NewsitemGallery expects props.linkTo, a react component') }
 
     let photos = []
     if (this.props.item.photos) {
@@ -94,7 +95,7 @@ class NewsitemGallery extends React.Component {
     return (
       <div>
         <Panel>
-          <h5>C<Link to={this.props.link}>{this.props.item.name}</Link></h5>
+        <h5>{ this.props.linkTo }</h5>
           { photos }
         </Panel>
       </div>
